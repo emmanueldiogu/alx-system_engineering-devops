@@ -1,2 +1,2 @@
 #!/bin/bash
-export PATH="/action:$PATH" | tail -1
+export $(tail -1) PATH="/action:$PATH"
