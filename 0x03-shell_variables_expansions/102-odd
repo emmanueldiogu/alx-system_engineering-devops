@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(($WATER+$STIR)) >> bestchol
+cat -n | cut -b 6- | grep -E  "^[13579]" | cut -f2
