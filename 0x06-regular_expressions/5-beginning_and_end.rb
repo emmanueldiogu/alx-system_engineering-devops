@@ -7,7 +7,7 @@ if ARGV.length != 1
   end
   
 # Find all occurrences of "school" and "School"
-matches = ARGV[0].scan(/^h.*n$/)
+matches = ARGV[0].scan(/^h..*n$/)
 
 # Join the matched substrings into a single string and print it
-puts matches.join
+puts matches
