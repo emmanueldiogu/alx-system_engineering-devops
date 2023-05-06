@@ -10,4 +10,4 @@ if ARGV.length != 1
 matches = ARGV[0].scan(/^[A-Z]+$/)
 
 # Join the matched substrings into a single string and print it
-puts matches
+puts matches.join
