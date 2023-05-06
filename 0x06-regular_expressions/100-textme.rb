@@ -1,11 +1,13 @@
 #!/usr/bin/env ruby
 
-# Define a regular expression to extract the necessary information
-regex = /\[from:(?<sender>[^\]]+)\] \[to:(?<receiver>[^\]]+)\] \[flags:(?<flags>[^\]]+)\]/
-
-# Read the log file line by line and extract the necessary information
-File.foreach('text_messages.log') do |line|
-  if match = regex.match(line)
-    puts "#{match[:sender]},#{match[:receiver]},#{match[:flags]}"
-  end
+# Get the command line argument
+if ARGV.length != 1
+  puts "Usage: ruby 0-simply_match_school.rb <string>"
+  exit 1
 end
+regex = /\[from:(?<sender>[^\]]+)\] \[to:(?<receiver>[^\]]+)\] \[flags:(?<flags>[^\]]+)\]/
+# Find all occurrences of "school" and "School"
+matches = ARGV[0].scan(regex)
+
+# Join the matched substrings into a single string and print it
+puts matches.join(',')
