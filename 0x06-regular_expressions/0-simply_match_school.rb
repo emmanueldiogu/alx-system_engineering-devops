@@ -6,9 +6,8 @@ if ARGV.length != 1
     exit 1
   end
   
-  # Check if the argument contains "School"
-  if ARGV[0] =~ /.*School/
-    puts ARGV[0].gsub(/.*?(School)/, '\1')
-  else
-    puts "No match"
-  end
+# Find all occurrences of "school" and "School"
+matches = ARGV[0].scan(/School/)
+
+# Join the matched substrings into a single string and print it
+puts matches.join
